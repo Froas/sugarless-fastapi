@@ -89,5 +89,4 @@ Interactive Swagger UI available at:
 
 ## 💡 License
 
-MIT (or your preferred license)
-
+MIT
