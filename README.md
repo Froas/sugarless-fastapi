@@ -16,7 +16,7 @@ You can add, retrieve, update, and delete sugarless products.
 * **Python 3.10+**
 * **FastAPI**
 * **MongoDB Atlas**
-* **pymongo** (or another MongoDB driver)
+* **pymongo** 
 * **Pydantic**
 * **Uvicorn**
 

@@ -1,5 +1,10 @@
 from pymongo.mongo_client import MongoClient
-uri = "mongodb+srv://frotherdrone:frotdfsa21124afSADF1@sugar.nkkiqc4.mongodb.net/?retryWrites=true&w=majority&appName=Sugar"
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+uri = os.getenv("URL")
 client = MongoClient(uri)
 
 db = client.sugar_db
