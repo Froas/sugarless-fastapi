@@ -3,7 +3,7 @@ from models.products import Product
 from config.database import collection
 from schema.schemas import list_serial, individual_serial, random_serial
 from bson import ObjectId
-import redis.asyncio as redis
+# import redis.asyncio as redis
 import json
 
 
