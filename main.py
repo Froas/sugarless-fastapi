@@ -6,9 +6,12 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=[
+        "https://froas.github.io", 
+        "https://froas.github.io/react-openapi-sugarfree"
+    ],
     allow_credentials=True,
-    allow_methods=["*"],
+    allow_methods=["GET"],
     allow_headers=["*"]
 
 )
