@@ -1,4 +1,4 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, status, Response
 from models.products import Product
 from config.database import collection
 from schema.schemas import list_serial, individual_serial, random_serial
@@ -9,7 +9,7 @@ import json
 
 router = APIRouter()
 
-r = redis.from_url("redis://localhost")
+# r = redis.from_url("redis://localhost")
 
 def serialize(doc):
     doc.pop("_id", None)
@@ -30,18 +30,22 @@ async def delete_product(id: str):
 
 @router.get("/random")
 async def get_random():
-    cached = await r.get("random_pool")
+    # cached = await r.get("random_pool")
 
-    if cached:
-        print("Cache is used")
-        pool = json.loads(cached)
-        return random_serial(pool)
+    # if cached:
+    #     print("Cache is used")
+    #     pool = json.loads(cached)
+    #     return random_serial(pool)
     
-   
     products = list(collection.find())
 
     cleaned = [serialize(product) for product in products]
 
-    await r.set("random_pool", json.dumps(cleaned))
+    # await r.set("random_pool", json.dumps(cleaned))
     product = random_serial(cleaned)
     return product
+
+
+@router.get("/status")
+async def get_status(response: Response):
+    response.status_code = status.HTTP_200_OK
