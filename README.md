@@ -89,7 +89,7 @@ Interactive Swagger UI available at:
 
 ## 💡 License
 
-MIT
+[MIT](https://github.com/Froas/sugarless-fastapi/blob/master/LICENSE)
 
 ---
 
