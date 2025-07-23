@@ -90,3 +90,9 @@ Interactive Swagger UI available at:
 ## 💡 License
 
 MIT
+
+---
+
+**Made with ❤️ by [Froas](https://github.com/Froas)**
+
+---
